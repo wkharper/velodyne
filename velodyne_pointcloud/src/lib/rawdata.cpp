@@ -439,9 +439,9 @@ void RawData::unpack_vlp16(const velodyne_msgs::msg::VelodynePacket & pkt, DataC
            */
           z = distance_y * sin_vert_angle + vert_offset * cos_vert_angle;
 
-          /** Use standard ROS coordinate system (right-hand rule) */
-          float x_coord = y;
-          float y_coord = -x;
+          /** Keep as VLP-16 manual coordinates */
+          float x_coord = x;
+          float y_coord = y;
           float z_coord = z;
 
           /** Intensity Calculation */
